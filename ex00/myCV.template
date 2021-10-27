@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazarov M.S</title>
+    <title>{profile_fio_short}</title>
     <script src="https://kit.fontawesome.com/95c4f2c6bd.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
@@ -125,7 +125,7 @@
         }
 
         .resume .resume_left .resume_skills ul li .skill_name {
-            width: 25%;
+            width: 50%;
         }
 
         .resume .resume_left .resume_skills ul li .skill_progress {
@@ -357,9 +357,9 @@
                         <li>
                             <div class="skill_name">{skills[5].name}</div>
                             <div class="skill_progress">
-                                <span style="width: {skills[5].progress};"></span>
+                                <span style="width: {skills[5].progress}%;"></span>
                             </div>
-                            <div class="skill_per">{skills[5].progress}</div>
+                            <div class="skill_per">{skills[5].progress}%</div>
                         </li>
                     </ul>
                 </div>
@@ -450,9 +450,9 @@
                         </div>
                     </li>
                     <li>
-                        <div class="date">{works[0].time}</div>
+                        <div class="date">{works[1].time}</div>
                         <div class="info">
-                            <p class="semi-bold">{works[0].position}</p>
+                            <p class="semi-bold">{works[1].position}</p>
                             <p>{works[0].description}</p>
                         </div>
                     </li>
