@@ -7,7 +7,8 @@ class Page:
 		self.content = content
 
 	def is_valid(self):
-		if isinstance(self.content, (Html, Head, Body, Title, Meta, Img, Table, Th, Tr, Td , Ul, Ol, Li, H1, H2, P, Div, Span, Hr, Br, Text)):
+		if isinstance(self.content, (
+				Html, Head, Body, Title, Meta, Img, Table, Th, Tr, Td, Ul, Ol, Li, H1, H2, P, Div, Span, Hr, Br, Text)):
 			return self.content.is_valid()
 		return False
 
@@ -16,6 +17,13 @@ class Page:
 			return Doctype().__str__() + '\n' + self.content.__str__()
 		else:
 			return self.content.__str__()
+
+	def write_to_file(self, filename):
+		try:
+			with open(filename, 'w') as file:
+				file.write(self.__str__())
+		except Exception as e:
+			print(e)
 
 
 def main():
@@ -144,5 +152,8 @@ def main():
 	html = Html([head, body])
 	page = Page(html)
 	print(page, page.is_valid(), '', sep='\n')
+	page.write_to_file('Page.html')
+
+
 if __name__ == '__main__':
 	main()
