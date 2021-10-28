@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 class DotDict(dict):
 	__getattr__ = dict.get
 	__setattr__ = dict.__setitem__
